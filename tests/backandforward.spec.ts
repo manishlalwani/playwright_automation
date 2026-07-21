@@ -1,0 +1,30 @@
+import { test, expect, BrowserContext, Page } from '@playwright/test';
+
+test('Back and Forward Test', async ({ page }) => {
+
+
+    await page.goto('https://naveenautomationlabs.com/opencart/index.php?route=common/home');
+    console.log(await page.title());
+    await page.waitForTimeout(2000);
+
+    await page.goto('https://google.com');
+    console.log(await page.title());
+    await page.waitForTimeout(2000);
+
+    await page.goBack();
+    console.log(await page.title());
+    await page.waitForTimeout(2000);
+
+    await page.goForward();
+    console.log(await page.title());
+    await page.waitForTimeout(2000);
+
+    await page.goBack();
+    console.log(await page.title());
+    await page.waitForTimeout(2000);
+
+    await page.reload(); // will reload the page
+
+
+
+})

@@ -8,7 +8,7 @@ const typeMessageInput = '#messageInput';
 const sendMsgBtn = '#sendBtn';
 const leaveBtn = '#leaveBtn';
 
-test('Multi User Test', async ({ browser }) => {
+test('Multi User Chat Test', async ({ browser }) => {
     let ctx1: BrowserContext = await browser.newContext();
     let ctx2: BrowserContext = await browser.newContext();
     let ctx3: BrowserContext = await browser.newContext();

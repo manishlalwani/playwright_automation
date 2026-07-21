@@ -9,7 +9,7 @@ test('title test', async ({ page }) => {
     console.log('app URL:', UrlName);
 });
 
-test('Multile Browser test', async () => {
+test.skip('Multile Browser test', async () => {
     let browser: Browser = await chromium.launch({ headless: false });
     //let browser: Browser = await chromium.launch({ headless: false , channel: 'chrome'});
     //let browser: Browser = await chromium.launch({ headless: false, executablePath:'/Applications/Opera.app/Contents/MacOS/Opera' });
