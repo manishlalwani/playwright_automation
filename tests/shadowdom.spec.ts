@@ -74,19 +74,23 @@ test('Shadow dom level 6 element Checkbox test', async ({ page }) => {
 
     await page.getByRole('button', { name: 'add' }).click();
 
-    let allCheckBox = await page.locator('li.todo-item').all();
+    // let allCheckBox = await page.locator('li.todo-item').all();
 
-    for (let chck of allCheckBox) {
-        let text = await chck.allInnerTexts();
-        console.log(text);
-        await chck.getByRole('checkbox').click();
-    }
+    // for (let chck of allCheckBox) {
+    //     let text = await chck.allInnerTexts();
+    //     console.log(text);
+    //     await chck.getByRole('checkbox').click();
+    // }
 
-    let text = await page.locator('.counter').innerText();
+    // let text = await page.locator('.counter').innerText();
 
-    console.log(text);
+    // console.log(text);
 
+    let count = await page.locator('li.todo-item').count();
+    expect(count).toEqual(5);
 
+    let element = await page.locator('li.todo-item').all();
+    expect(element.length).toEqual(5)
 
     await page.pause();
 
@@ -105,5 +109,11 @@ test('Shadow dom level 7 element Combobox test', async ({ page }) => {
 
 
     await page.pause();
+
+    let count = await page.locator('button[id="submit"]').count();
+    expect(count).toEqual(1);
+
+    let element = await page.locator('div.submit').all();
+    expect(element.length).toEqual(1)
 
 });

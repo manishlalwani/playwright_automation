@@ -9,6 +9,13 @@ test('iframe element test', async ({ page }) => {
     //Iframe DOM will be loaded
 
     let iframeLocator = page.frameLocator('#frame-one748593425');
+    let frameLocator = page.frameLocator('iframe[id*="payment-frame"]');
+
+    //let frameLocator1  = await page.frameLocator.
+
+    await frameLocator.getByRole('button', { name: 'Submit', level: 3 }).click();
+
+
 
     await iframeLocator.getByRole('textbox', { name: 'Proposal title' }).fill('Automtion Testing');
 
